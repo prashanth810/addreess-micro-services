@@ -18,7 +18,7 @@ const AddressSchema = new mongoose.Schema({
     },
     building_number: {
         type: String,
-        trmi: true,
+        trim: true,
         required: true,
     },
     street: {
@@ -42,13 +42,12 @@ const AddressSchema = new mongoose.Schema({
         required: true,
     },
     pincode: {
-        typr: String,
+        type: String,
         trim: true,
         required: true,
     },
     country: {
         type: String,
-        required: true,
         default: "India",
         trim: true,
     },
@@ -59,10 +58,10 @@ const AddressSchema = new mongoose.Schema({
     },
     is_default: {
         type: Boolean,
-        default: false,    // ✅ user can set one address as default
+        default: false,
     },
-}, { timestamps: true, minimize: false });
+}, { timestamps: true });
 
-const AddressModel = mongoose.model("Addres", AddressSchema);
+const AddressModel = mongoose.model("Address", AddressSchema);
 
 export default AddressModel;
